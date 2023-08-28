@@ -1,2 +1,2 @@
 # Discord-Bot
-lol bozo
+hahaha
