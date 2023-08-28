@@ -1,4 +1,3 @@
 # Discord-Bot
 
-
-## kut opdracht
+## update
