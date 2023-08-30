@@ -6,6 +6,10 @@ const commands = [
         name: 'game',
         description: 'Get the gamepicker!',
     },
+    {
+        name: 'ping',
+        description: 'pong',
+    },
 ];
 
 const rest = new REST({version: '10' }).setToken(process.env.CLIENT_TOKEN);
