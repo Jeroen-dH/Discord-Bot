@@ -1,10 +1,22 @@
 require('dotenv').config();
-const { REST, Routes } = require('discord.js');
+const { REST, Routes, ApplicationCommand, ApplicationCommandOptionType } = require('discord.js');
 
 const commands = [
     {
         name: 'game',
         description: 'Get the gamepicker!',
+    },
+    {
+        name: 'steam',
+        description: 'Get steam games',
+        options: [
+            {
+                name: 'steam-id',
+                description: 'steam-id om te zien welke games de user heeft',
+                type: ApplicationCommandOptionType.String,
+                required: true,
+            }
+        ]
     },
     {
         name: 'ping',
