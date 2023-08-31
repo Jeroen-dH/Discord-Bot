@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 // Discord.js versions ^13.0 require us to explicitly define client intents
-const { Client, GatewayIntentBits } = require('discord.js')
+const { Client, GatewayIntentBits, EmbedBuilder} = require('discord.js')
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -44,7 +44,23 @@ client.on('interactionCreate', (interaction) => {
     }
 
     if(interaction.commandName === 'game'){
-        interaction.reply('games');
+        const embed = new EmbedBuilder()
+            .setTitle('Game picker')
+            .setDescription('Please select 3 games you want to add to the game picker.')
+            .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png")
+            .setColor(0x001ff)
+            .addFields(
+                {
+                    name: 'Field title',
+                    value: 'field value',
+                    inline: true,
+                },
+                {
+                    name: 'Field title',
+                    value: 'field value',
+                    inline: true,
+                })
+        interaction.reply({embeds: [embed]});
     }
 
     if(interaction.commandName === 'ping'){
