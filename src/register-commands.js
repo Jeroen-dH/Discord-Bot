@@ -7,6 +7,10 @@ const commands = [
         description: 'Get the gamepicker!',
     },
     {
+        name: 'gamepicker',
+        description: 'kijkt welke games iedereen heeft',
+    },
+    {
         name: 'steam',
         description: 'Get steam games',
         options: [
