@@ -31,7 +31,7 @@ client.on('interactionCreate', (interaction) => {
                 // console.log(steam_games);
                 // console.log(steam_games);
                 steam_games.forEach(element => {
-                    games.push(element.name+"\n");
+                    games.push("\n"+element.name);
                 });
                 interaction.reply('games van steam user '+ summary.nickname+'\n'+games);
             })();
