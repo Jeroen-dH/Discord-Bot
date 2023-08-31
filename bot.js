@@ -37,30 +37,37 @@ client.on('interactionCreate', (interaction) => {
             })();
             // console.log(summary.nickname);
 
-
+        
         });
 
 
     }
-
+    
     if(interaction.commandName === 'game'){
+        const options = [
+            { label: 'Option 1', value: 'option1' },
+            { label: 'Option 2', value: 'option2' },
+            { label: 'Option 3', value: 'option3' },
+          ];
+        
         const embed = new EmbedBuilder()
-            .setTitle('Game picker')
+            .setTitle('Game Selector - Game Picker')
             .setDescription('Please select 3 games you want to add to the game picker.')
             .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png")
+            .setAuthor({ name: 'Jimmy Neutron'})
             .setColor(0x001ff)
-            .addFields(
-                {
-                    name: 'Field title',
-                    value: 'field value',
-                    inline: true,
-                },
-                {
-                    name: 'Field title',
-                    value: 'field value',
-                    inline: true,
-                })
-        interaction.reply({embeds: [embed]});
+    
+            const selectMenu = new MessageSelectMenu()
+            .setCustomId('menu-id')
+            .setPlaceholder('Select an option');
+
+            for (const option of options) {
+                selectMenu.addOptions(option);
+            }
+            const actionRow = new MessageActionRow().addComponents(selectMenu);
+            embed.addComponents(actionRow);
+            
+            interaction.reply({embeds: [embed]});
     }
 
     if(interaction.commandName === 'ping'){
