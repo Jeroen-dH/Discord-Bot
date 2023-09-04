@@ -7,11 +7,11 @@ const commands = [
         description: 'Get the gamepicker!',
     },
     {
-        name: 'gamepicker',
+        name: 'play',
         description: 'kijkt welke games iedereen heeft',
     },
     {
-        name: 'steam',
+        name: 'getsteamstats',
         description: 'Get steam games',
         options: [
             {
@@ -25,6 +25,30 @@ const commands = [
     {
         name: 'ping',
         description: 'pong',
+    },
+    {
+        name: 'pablo',
+        description: 'yes jump bro',
+    },
+    {
+        name: 'sus',
+        description: 'no sussy among us command',
+    },
+    {
+        name: 'noob',
+        description: 'get noobed kid',
+    },
+    {
+        name: 'crypto',
+        description: 'i see you have big money!',
+    },
+    {
+        name: 'speed',
+        description: 'ishowmeat',
+    },
+    {
+        name: 'help',
+        description: 'i see you need help',
     },
 ];
 

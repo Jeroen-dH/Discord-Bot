@@ -17,7 +17,7 @@ client.on('ready', () => {
 client.on('interactionCreate', (interaction) => {
     if (!interaction.isChatInputCommand()) return;
     
-    if(interaction.commandName === 'steam'){
+    if(interaction.commandName === 'getsteamstats'){
         const SteamAPI = require('steamapi');
         const steam = new SteamAPI('3875F82F65D5E2D0C42959930633103D');
         const steam_id = interaction.options.get('steam-id').value;
@@ -55,9 +55,48 @@ client.on('interactionCreate', (interaction) => {
             interaction.reply({embeds: [embed]});
     }
 
+
+    if(interaction.commandName === 'help') {
+        const helpembed = new EmbedBuilder()
+        .setTitle('Help Menu - Jimmy')
+        .setDescription('U still need help big noob?')
+        .setThumbnail("https://media.discordapp.net/attachments/915197677485039666/1146422030602862612/jbcj0uqbihg41.jpg?width=686&height=686")
+        .setAuthor({ name: 'Jimmy Neutron'})
+        .setColor(0xff0000)
+        .addFields(
+            { name: '/help', value: '`this boring menu`', inline: true },
+            { name:"/crypto", value: "`for big money users only`", inline: true},
+            { name: "/sus", value: "`Among us ඞ`", inline: true },
+            { name: "/noob", value: "`You a big noob`", inline: true},
+            { name: "/pablo", value: "`Pablo tutututu`", inline: true },
+            { name: "/speed", value: "`Ayo speed`", inline: true},
+            { name: "/rooster", value: "`Get rooster!`", inline: true}
+
+        )
+        .setFooter({ text: 'Jimmy Neutron | Discord Bot'})
+        
+        interaction.reply({embeds: [helpembed]});
+    }
+
     if(interaction.commandName === 'ping'){
         interaction.reply('pong');
     }
+    if(interaction.commandName === 'pablo'){
+        interaction.reply('https://www.youtube.com/watch?v=tJpSVqmG27I');
+    }
+    if(interaction.commandName === 'sus'){
+        interaction.reply('https://youtu.be/Regpv0xU3ZQ');
+    }
+    if(interaction.commandName === 'noob'){
+        interaction.reply('https://youtu.be/uKWcIaJtS6Q');
+    }
+    if(interaction.commandName === 'crypto'){
+        interaction.reply('**Zakenman hiero. Wacht ik help wel...** https://coinmarketcap.com thank me later. Als je winst maak maak het over naar NL51INGB92232837298183 thanks');
+    }
+    if(interaction.commandName === 'speed'){
+        interaction.reply('https://youtu.be/BVzwVLG9zqo');
+    }
+
     if(interaction.commandName === 'gamepicker'){
         const SteamAPI = require('steamapi');
         const steam = new SteamAPI('3875F82F65D5E2D0C42959930633103D');
